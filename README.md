@@ -38,19 +38,27 @@ In particular, we decided to download historical financial data for the specifie
 
 ## 02. BENCHMARK STRATEGY
 The goal is to leverage reinforcement learning to train models (**A2C** and **PPO**) that can dynamically allocates *weights* to different assets with the goal of **maximizing** *returns* and compare the performance of the RL-based algorithms against two *benchmark* strategies: equal weights (**EW**) strategy and the mean-variance optimization (**MMVO**) strategy.
+
 **EW**
+
 An equal-weight strategy is a *straightforward* investment approach where each asset or security in a portfolio is assigned an **equal weight**, regardless of its individual characteristics such as market capitalization, volatility, stock price, or other factors. It involves distributing an **equal amount** of capital to each asset in the portfolio, ensuring that each asset contributes *equally* to the overall performance of the portfolio. This strategy aims to achieve *simplicity*, *diversification*, and a *uniform* exposure to each component. Once allocated an equal percentage of the total capital to each security in the portfolio, it consists of periodically **rebalancing** the portfolio to maintain equal weights which may have deviated due to price changes. 
+
 **MMVO**
+
 Modern Portfolio Theory (**MPT**), developed by Harry Markowitz in 1952, is based on the idea of achieving an optimal *risk-return* **trade-off** by combining assets in a portfolio. It emphasizes the importance of *diversification* and aims to **maximize** the expected *return* of a portfolio for a given level of risk or **minimize** the *risk* for a target level of expected return. This strategy involves calculating the expected *returns*, *variances*, and *covariances* of assets to construct an **efficient frontier** of portfolios: the *optimal* portfolio is then selected based on the investor's **risk tolerance** and return expectations.
 
 ## 03. RL ALGORITHMS
 In order to **outperform** the *benchmark* strategies, we decided to use reinforcement learning-based models, including **Actor Critic** and Proximal Policy Optimization (**PPO**). 
+
 **A2C**
+
 The model combines elements of both **value-based** and **policy-based** methods, thus the RL algorithm is split in two parts:
 - The **Actor** *(policy based)* is responsible for learning the **optimal** *policy*, which defines the agent’s strategy for selecting actions in a given state. Its goal is to **maximize** the expected cumulative *reward* by adjusting its policy (ex. Policy Gradients).
 - The **Critic** (value based) is responsible for learning the **value** *function*, which estimates the expected cumulative *reward* for a given state. It produces the **Q values** of the action, so evaluates the action by computing the value function (ex. Q learning).
 The objective function combines the policy gradient and the advantage function to maximize the expected cumulative reward. The result is that the *overall* architecture will learn more **efficiently** than the two methods separately.
+
 **PPO**
+
 It is a *policy optimization* method for decision-making in a given environment that aims to improve the policy while ensuring *stable* and *efficient* learning. The algorithm aims to *iteratively* **update** the policy to **maximize** cumulative *rewards* over time. PPO addresses the **trade-off** between exploration and exploitation, encouraging the agent to explore new strategies while maintaining a level of stability in the learning process: *exploration* involves trying new actions to discover their effects, while *exploration* concerns favoring known actions to yield high rewards. 
 
 ## 04. MODEL COMPARISON
