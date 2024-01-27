@@ -3,6 +3,7 @@ Reinforcement Learning for Portfolio Allocation - University Group Project
 
 ## 01. INTRODUCTION
 **OBJECTIVE AND CONSTRAINTS**
+
 Our objective is to **outperform** the *equal-weight* and *mean-variance* optimization strategies using reinforcement learning-based portfolio optimization model, designing the **RL** model to learn a *policy* that dynamically allocates weights to different assets with the goal of *maximizing* returns while considering the following constraints: 
 - **Daily Rebalancing**: capability to adjust the portfolio allocation among stocks on a daily basis.
 - **No Short Selling**: non-negative stock weights to be aligned with a long-only investment approach (no short positions in stocks). 
@@ -10,12 +11,14 @@ Our objective is to **outperform** the *equal-weight* and *mean-variance* optimi
 - **Total Weights Equal 1**: to maintain a normalized portfolio, ensuring that it is fully invested, and the weights of all stocks sum up to 1. 
 
 **SOURCE DATA**
+
 We decided to download data directly from **Yahoo Finance** instead of using the pre-prepared dataset containing only stock prices. Obtaining real-time or recent data directly from a financial data source might be more convenient: 
 - **Freshness of Data**: since financial markets are dynamic and stock prices can change rapidly, downloading data from Yahoo Finance allows you to access the most recent and up-to-date information. 
 - **Inclusion of Additional Features**: Yahoo Finance provides a wide range of financial data and metrics behind stock prices, including company fundamentals, technical indicators, and economic indicators. 
 - **Consistency Across Datasets**: by obtaining data directly from Yahoo Finance, you can ensure consistency with external benchmarks and indices. 
 
 **ECONOMIC INDICATORS**
+
 - **Open Price**: *first* traded price of a financial instrument at the *beginning* of a trading day. It provides insight into the initial *market sentiment* and can influence the day’s trading activity. 
 - **Close Price**: *last* traded price of a financial instrument at the *end* of a trading day. It is often used to calculate *returns* and assess the overall *performance* of an asset. 
 - **High Price**: *highest* traded price of a financial instrument during a specific *time period*, such as a training day. 
@@ -23,6 +26,7 @@ We decided to download data directly from **Yahoo Finance** instead of using the
 - **Volume**: total number of *shares* traded for a particular financial instrument during a given time period. *High* trading volumes are often associated with increased market *activity* and *liquidity*. 
 
 **FINANCIAL INDICATORS**
+
 For providing insights into market *trends* and potential trading *signals*, let's collect the following list of **financial** indicators:
 - **MACD** (Moving Average Convergence Divergence): A trend-following momentum indicator that shows the relationship between two moving averages of a security’s price.
 - **Bollinger Bands** (Upper Band and Lower Band): A volatility indicator that consists of a middle band being an N-period simple moving average, an upper band at K times an N-period standard deviation above the middle band, and a lower band at K times an N-period standard deviation below the middle band.
@@ -33,6 +37,7 @@ For providing insights into market *trends* and potential trading *signals*, let
 - **60-day Simple Moving Average** (close_60_sma): Similar to the 30-day SMA, but calculated over a 60-day period.
 
 **STOCKS**
+
 For constructing a **well-balanced** and **resilient** investment portfolio, we decide to consider the following *well-known* companies: Microsoft Corporation (**MSFT**), Coca-Cola Company (**KO**), Boeing Company (**BA**), Procter & Gamble Co. (**PG**), AT&T Inc. (**T**), Pfizer Inc. (**PFE**), JPMorgan Chase & Co. (**JPM**), Exxon Mobil Corporation (**XOM**), McDonald's Corporation (**MCD**), Southern Company (**SO**), Simon Property Group, Inc. (**SPG**), and DuPont de Nemours, Inc. (**DD**).  
 In particular, we decided to download historical financial data for the specified list of stocks from **January 1, 2000** to **November 30, 2023**. 
 
