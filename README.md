@@ -1,5 +1,5 @@
 # Portfolio-Allocation
-Reinforcement Learning for Portfolio Allocation - University Group Project
+Portfolio Allocation using Reinforcement Learning for Prominent Companies (2000-2023) - University Group Project
 
 ## 01. INTRODUCTION
 **OBJECTIVE AND CONSTRAINTS**
